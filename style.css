@@ -1,0 +1,45 @@
+  html, body {
+
+  margin: 0;
+  padding: 0;
+}
+iframe { display:block;}
+
+button { font-size: 20px; position: absolute; top: 360px; right: 10px; }
+#fullTable { position: fixed; top: 35px; right: 0;}
+table {
+    table-layout: fixed;
+}
+
+th { width: 50px; }
+th + th { width: 300px }
+th + th + th { width: 200px;}
+td + td + td { position: relative;}
+.modelname {   overflow: hidden; text-overflow: ellipsis;width: 300px;}
+tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2) { background: #efefef; }
+
+.sparkline {
+    background-color: rgb(255, 166, 166);
+    height: 21px;
+    position: absolute;
+    /* bottom: 0; */
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 0;
+    }
+
+input , #Pagination  { display: none; }
+
+body, button {
+font-family: sans-serif;
+}
+
+#description { font-size: 22px; position: absolute; top: -1px; right: 10px; width: 430px;/* font-family: serif; */color: #666;}
+
+#colophon { 
+position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    }

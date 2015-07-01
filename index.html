@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Device viewport widths from the responsive web</title>
+<link rel=stylesheet href="style.css">
+</head>
+<body>
+
+<!-- some implementation notes in the source of script.js -->
+
+
+  <iframe width="861" height="532" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1YY2_nKgSyizOF066zeukJazqAFRJu8bI28rulogiAEo/pubchart?oid=393504014&amp;format=interactive">
+
+  </iframe>
+  <iframe width="861" height="335.5" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1YY2_nKgSyizOF066zeukJazqAFRJu8bI28rulogiAEo/pubchart?oid=300232324&amp;format=interactive">
+
+  </iframe>
+
+
+  <button id="button">Show matching devices 📱</button>
+
+  <script src="lib/jquery.min.js"></script> <!-- i didnt want to but sheetsee needed it -->
+  <script src="lib/tabletop1.3.4.js"></script>
+  <script src="lib/sheetsee.js"></script>
+
+<input id="fullTableFilter" type="text" placeholder="filter by.."></input>
+    <div id="fullTable" style="visibility:hidden;" hidden></div>
+    <p id="description">Starting with all mobile (phone + tablet) traffic to developers.google.com over the last 30 days, this is a plot of that traffic by the css pixel width of each device's viewport.
+<br><br>
+    First, hover to see which specific widths are the big spikes. Then, click the button below to view which devices this traffic is from. Sometimes you'll see the spike is due to one populate device (768), othertimes many smaller ones (360).
+
+
+    </p>
+<script id="fullTable_template" type="text/html">
+  <table>
+    <tr><th class="tHeader">vw width</th><th class="tHeader">model</th><th class="tHeader">percentage of devices</th></tr>
+      {{#rows}}
+        <tr><td>{{viewport}}</td><td><div class="modelname">{{model}}</div></td>
+        <td><span>{{percentagetxt}}</span> <div style="width: calc({{percentagetxt}} * 9)" class="sparkline"></div></td></tr>
+      {{/rows}}
+  </table>
+</script>
+<!-- the `9` in the calc() above is a magic number and totally dependent on my data. just was trying to scale the sparklines to look good -->
+
+  <script src="script.js"></script>
+
+
+  <p id="colophon">paul irish. july 1 2015. <span style="display:block; font-size: 70%;">Ironically, isn't mobile friendly and i'm sorry</span></p>
+</body>
+</html>
