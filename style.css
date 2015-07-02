@@ -1,45 +1,61 @@
-  html, body {
-
+html, body {
   margin: 0;
   padding: 0;
 }
-iframe { display:block;}
+iframe { display: block; max-width: 100%; }
 
-button { font-size: 20px; position: absolute; top: 360px; right: 10px; }
-#fullTable { position: fixed; top: 35px; right: 0;}
-table {
-    table-layout: fixed;
-}
+button { font-size: 20px; margin-left: 1em; margin-bottom: 1em; }
+table { table-layout: fixed; }
+#fullTable { position: fixed; top: 35px; right: 0; }
 
 th { width: 50px; }
 th + th { width: 300px }
 th + th + th { width: 200px;}
 td + td + td { position: relative;}
-.modelname {   overflow: hidden; text-overflow: ellipsis;width: 300px;}
-tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2) { background: #efefef; }
+.modelname { overflow: hidden; text-overflow: ellipsis;width: 300px; }
+tr:nth-child(even) td:nth-child(1),
+tr:nth-child(even) td:nth-child(2) { background: #efefef; }
 
 .sparkline {
-    background-color: rgb(255, 166, 166);
-    height: 21px;
-    position: absolute;
-    /* bottom: 0; */
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 0;
-    }
+  background-color: rgb(255, 166, 166);
+  height: 21px;
+  position: absolute;
+  /* bottom: 0; */
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 0;
+}
 
 input , #Pagination  { display: none; }
 
 body, button {
-font-family: sans-serif;
+  font-family: sans-serif;
 }
 
-#description { font-size: 22px; position: absolute; top: -1px; right: 10px; width: 430px;/* font-family: serif; */color: #666;}
+#description { font-size: 22px; color: #666; padding: 0 1em; }
 
-#colophon { 
-position: absolute;
-    bottom: 0;
-    right: 0;
-    text-align: right;
-    }
+#colophon {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  background: white;
+  padding: .5em;
+}
+
+/* 861 (iframe) + 430 (description) */
+@media (min-width: 1291px) {
+  #description {
+    width: 430px;
+    position: absolute;
+    top: -1px;
+    right: 10px;
+  }
+  #button {
+    position: absolute;
+    top: 360px;
+    right: 10px;
+    margin-left: 0;
+  }
+}
